@@ -669,6 +669,11 @@ header .navbar-default .navbar-nav li a:hover {
 .navigation .navbar-brand {
   padding-top: 5px;
 }
+@media (max-width: 768px) {
+  .navigation .navbar-brand img {
+    width: 100px;
+  }
+}
 .navigation .navbar-toggler {
   font-size: 36px;
 }

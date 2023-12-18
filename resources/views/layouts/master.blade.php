@@ -18,7 +18,7 @@
     <meta name="theme-name" content="airspace">
     <meta name="generator" content="Themefisher Airspace Template v1.0">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets') }}/logo.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets') }}/fav.png" />
 
 
     <!-- bootstrap.min css -->
@@ -36,7 +36,17 @@
     <link rel="stylesheet" href="{{ asset('assets') }}/css/style.css">
 
     @stack('css')
-
+    <style>
+        .navigation .navbar .navbar-nav li.active > a {
+           color: #f8a700;
+           text-decoration: none;
+        }
+        .navigation .navbar .navbar-nav li > a {
+            color: #000;
+            font-size: 16px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body id="body">
