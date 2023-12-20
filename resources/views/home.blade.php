@@ -108,9 +108,11 @@
             }
         }
 
-        a.serrvice .service-item:hover {
+        a.service .service-item:hover,
+        a.service .service-item:hover i {
             background: #f8a700 !important;
-            background-color: #f8a700 !important;
+            color: #fff;
+            border: none;
         }
     </style>
 @endpush
@@ -343,7 +345,8 @@
     </section>
     <!-- Call to action Start -->
 
-    <section class="call-to-action section-sm overly" style="
+    <section class="call-to-action section-sm overly"
+        style="
 	background: url({{ asset('assets') }}/images/Web/home-slider-1.png) no-repeat;">
         <div class="container">
             <div class="row">

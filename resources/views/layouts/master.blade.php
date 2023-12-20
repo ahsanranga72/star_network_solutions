@@ -37,11 +37,12 @@
 
     @stack('css')
     <style>
-        .navigation .navbar .navbar-nav li.active > a {
-           color: #f8a700;
-           text-decoration: none;
+        .navigation .navbar .navbar-nav li.active>a {
+            color: #f8a700;
+            text-decoration: none;
         }
-        .navigation .navbar .navbar-nav li > a {
+
+        .navigation .navbar .navbar-nav li>a {
             color: #000;
             font-size: 16px;
             text-decoration: none;

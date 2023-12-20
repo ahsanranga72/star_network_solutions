@@ -15,8 +15,11 @@
 
                     <div class="collapse navbar-collapse ml-auto" id="navbarsExample09">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
+                            <li class="nav-item {{ request()->route()->getName() == 'home'? 'active': '' }}">
                                 <a class="nav-link" href="{{ route('home') }}">Home</a>
+                            </li>
+                            <li class="nav-item {{ request()->route()->getName() == 'about-us'? 'active': '' }}">
+                                <a class="nav-link" href="{{ route('about-us') }}">About us</a>
                             </li>
                             <li class="nav-item dropdown @@portfolio">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdown03"
