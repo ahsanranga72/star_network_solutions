@@ -115,9 +115,74 @@
             border: none;
         }
     </style>
+    <style>
+        .snow-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            z-index: 99;
+            pointer-events: none;
+        }
+
+        .snowflake {
+            position: absolute;
+            border-radius: 50%;
+            opacity: .8;
+            pointer-events: none;
+            background: linear-gradient(to right, white, violet);
+            animation: fall linear infinite, rainbow 5s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                opacity: 0;
+                transform: translateY(0);
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.5;
+                transform: translateY(100vh);
+            }
+        }
+
+        @keyframes diagonal-fall {
+            0% {
+                opacity: 0;
+                transform: translate(0, 0);
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.25;
+                transform: translate(10vw, 100vh);
+            }
+        }
+
+        @keyframes rainbow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+    </style>
 @endpush
 
 @section('content')
+    <div class="snow-container"></div>
+
     <section class="slider" style="
 	background: url({{ asset('assets') }}/images/web/home-slider-2.png) no-repeat;">
         <div class="row mx-5">
@@ -157,7 +222,7 @@
     </div>
     <!-- Wrapper Start -->
     <section class="about section">
-        <div class="container">
+        <div class="container" style="background: white">
             <div class="row">
                 <div class="col-md-12 col-lg-12 col-sm-12">
                     <div class="block">
@@ -278,7 +343,7 @@
     </section>
     <!-- Service Start -->
     <section class="service">
-        <div class="container">
+        <div class="container" style="background: white">
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="section-title" style="margin-bottom: 40px;">
@@ -374,6 +439,89 @@
                     $(this).text(Math.ceil(now));
                 }
             });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const snowContainer = document.querySelector(".snow-container");
+
+            const particlesPerThousandPixels = 0.1;
+            const fallSpeed = .25;
+            const pauseWhenNotActive = true;
+            const maxSnowflakes = 200;
+            const snowflakes = [];
+
+            let snowflakeInterval;
+            let isTabActive = true;
+
+            function resetSnowflake(snowflake) {
+                const size = Math.random() * 5 + 1;
+                const viewportWidth = window.innerWidth - size; // Adjust for snowflake size
+                const viewportHeight = window.innerHeight;
+
+                snowflake.style.width = `${size}px`;
+                snowflake.style.height = `${size}px`;
+                snowflake.style.left = `${Math.random() * viewportWidth}px`; // Constrain within viewport width
+                snowflake.style.top = `-${size}px`;
+
+                const animationDuration = (Math.random() * 3 + 2) / fallSpeed;
+                snowflake.style.animationDuration = `${animationDuration}s`;
+                snowflake.style.animationTimingFunction = "linear";
+                snowflake.style.animationName =
+                    Math.random() < 0.5 ? "fall" : "diagonal-fall";
+
+                setTimeout(() => {
+                    if (parseInt(snowflake.style.top, 10) < viewportHeight) {
+                        resetSnowflake(snowflake);
+                    } else {
+                        snowflake.remove(); // Remove when it goes off the bottom edge
+                    }
+                }, animationDuration * 1000);
+            }
+
+            function createSnowflake() {
+                if (snowflakes.length < maxSnowflakes) {
+                    const snowflake = document.createElement("div");
+                    snowflake.classList.add("snowflake");
+                    snowflakes.push(snowflake);
+                    snowContainer.appendChild(snowflake);
+                    resetSnowflake(snowflake);
+                }
+            }
+
+            function generateSnowflakes() {
+                const numberOfParticles =
+                    Math.ceil((window.innerWidth * window.innerHeight) / 1000) *
+                    particlesPerThousandPixels;
+                const interval = 5000 / numberOfParticles;
+
+                clearInterval(snowflakeInterval);
+                snowflakeInterval = setInterval(() => {
+                    if (isTabActive && snowflakes.length < maxSnowflakes) {
+                        requestAnimationFrame(createSnowflake);
+                    }
+                }, interval);
+            }
+
+            function handleVisibilityChange() {
+                if (!pauseWhenNotActive) return;
+
+                isTabActive = !document.hidden;
+                if (isTabActive) {
+                    generateSnowflakes();
+                } else {
+                    clearInterval(snowflakeInterval);
+                }
+            }
+
+            generateSnowflakes();
+
+            window.addEventListener("resize", () => {
+                clearInterval(snowflakeInterval);
+                setTimeout(generateSnowflakes, 1000);
+            });
+
+            document.addEventListener("visibilitychange", handleVisibilityChange);
         });
     </script>
 @endpush

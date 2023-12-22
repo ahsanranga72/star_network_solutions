@@ -34,6 +34,7 @@
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="{{ asset('assets') }}/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
     @stack('css')
     <style>
@@ -51,7 +52,6 @@
 </head>
 
 <body id="body">
-
     <!-- Header Start -->
     @include('layouts.partials._header')
     <!-- header close -->
@@ -66,6 +66,15 @@
     <div id="scroll-to-top" class="scroll-to-top">
         <span class="icon ion-ios-arrow-up"></span>
     </div>
+
+    <script type="text/javascript" src="https://cookieconsent.popupsmart.com/src/js/popper.js"></script>
+    <script>
+        window.start.init({
+            Palette: "palette5",
+            Mode: "floating right",
+            Theme: "classic",
+        })
+    </script>
     <!--
     Essential Scripts
     =====================================-->
@@ -88,6 +97,21 @@
 
     <script src="{{ asset('assets') }}/js/script.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    @if (session()->has('success'))
+        <script>
+            window.onload = function() {
+                toastr.success('{{ session('success') }}');
+            };
+        </script>
+    @endif
+    @if (session()->has('error'))
+        <script>
+            window.onload = function() {
+                toastr.error('{{ session('error') }}');
+            };
+        </script>
+    @endif
     @stack('js')
 </body>
 

@@ -2557,7 +2557,6 @@ ul.dropdown-menu li {
 .page-404 {
   display: flex;
   align-items: center;
-  min-height: 100vh;
   padding: 70px 0;
   text-align: center;
 }
@@ -2566,6 +2565,7 @@ ul.dropdown-menu li {
   font-weight: bold;
   line-height: 1;
   margin-top: 30px;
+  color: #f8a700;
 }
 @media (max-width: 480px) {
   .page-404 h1 {
@@ -2605,8 +2605,7 @@ ul.dropdown-menu li {
 
 .footer {
   background: #F5F5F5;
-  text-align: center;
-  padding: 80px 0;
+  padding: 40px 0;
 }
 .footer p {
   font-size: 13px;

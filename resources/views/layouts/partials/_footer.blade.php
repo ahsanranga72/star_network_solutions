@@ -1,23 +1,35 @@
 <footer class="footer">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
-                <div class="footer-manu">
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact us</a></li>
-                        <li><a href="service.html">How it works</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                    </ul>
-                </div>
-                <p class="copyright mb-0">Copyright
+            <div class="col-md-3 col-lg-3 col-sm-6 text-center">
+                <img class="mb-2" src="{{ asset('assets/images/Web/footer.png') }}" alt=""
+                    style="border-radius: 25%">
+                <h2>Our Address</h2>
+                <h3>Star Network Solutions</h3>
+                <p>Lilyrin Tower House No -39/1, 8th Floor <br> Road No -2, Dhanmondi, Dhaka 1209</p>
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-6 text-center">
+                <i class="icon ion-android-mail" style="color: #000; font-size:60px;"></i>
+                <h2>Our Mailbox</h2>
+                <h6>info@snsbd.com</h6>
+                <h6>sales@snsbd.com</h6>
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-6 text-center">
+                <i class="icon ion-ios-telephone" style="color: #000; font-size:60px;"></i>
+                <h2>Our Phone</h2>
+                <h6>+8801897974300</h6>
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-6 text-center">
+                <i class="icon ion-information-circled" style="color: #000; font-size:60px;"></i>
+                <h2>Informations</h2>
+                <h6><a href="{{ route('about-us') }}">About us</a></h6>
+                <h6><a href="{{ route('privacy-policy') }}">Privacy policy</a></h6>
+            </div>
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <p class="copyright mb-0 text-center">Copyright
                     <script>
                         document.write(new Date().getFullYear())
-                    </script> &copy; Designed & Developed by <a
-                        href="http://www.themefisher.com">Themefisher</a>. All rights reserved.
-                    <br> Get More <a href="https://themefisher.com/free-bootstrap-templates/">Free Bootstrap
-                        Templates</a>
+                    </script> &copy; Designed & Developed by <a href="{{ route('home') }}">US</a>.
                 </p>
             </div>
         </div>
