@@ -148,7 +148,7 @@
                 </div><!-- .col-md-7 close -->
                 <div class="col-md-5">
                     <div class="block">
-                        <img src="{{ asset('assets') }}/images/web/about-1.png" alt="Img">
+                        <img src="{{ asset('assets') }}/images/Web/about-1.png" alt="Img">
                     </div>
                 </div><!-- .col-md-5 close -->
             </div>

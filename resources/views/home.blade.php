@@ -184,7 +184,7 @@
     <div class="snow-container"></div>
 
     <section class="slider" style="
-	background: url({{ asset('assets') }}/images/web/home-slider-2.png) no-repeat;">
+	background: url({{ asset('assets') }}/images/Web/home-slider-2.png) no-repeat;">
         <div class="row mx-5">
             <div class="col-md-12">
                 <div class="block">
