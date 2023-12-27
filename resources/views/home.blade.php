@@ -358,7 +358,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-6">
-                    <a href="#" class="service">
+                    <a href="{{ route('solutions') }}" class="service">
                         <div class="card card-body service-item">
                             <i class="icon ion-android-lock"></i>
                             <h4 class="h4 font-weight-bold">IT Security</h4>
@@ -366,7 +366,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
-                    <a href="#" class="service">
+                    <a href="{{ route('solutions') }}" class="service">
                         <div class="card card-body service-item">
                             <i class="icon ion-android-globe"></i>
                             <h4 class="h4 font-weight-bold">Networking</h4>
@@ -374,7 +374,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
-                    <a href="#" class="service">
+                    <a href="{{ route('solutions') }}" class="service">
                         <div class="card card-body service-item">
                             <i class="icon ion-android-folder-open"></i>
                             <h4 class="h4 font-weight-bold">Backup & Storage</h4>
@@ -382,7 +382,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6 mt-lg-5 mt-md-5">
-                    <a href="#" class="service">
+                    <a href="{{ route('solutions') }}" class="service">
                         <div class="card card-body service-item">
                             <i class="icon ion-cloud"></i>
                             <h4 class="h4 font-weight-bold">Server & Virtualization</h4>
@@ -390,7 +390,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6 mt-lg-5 mt-md-5">
-                    <a href="#" class="service">
+                    <a href="{{ route('services') }}" class="service">
                         <div class="card card-body service-item">
                             <i class="icon ion-chatbubbles"></i>
                             <h4 class="h4 font-weight-bold">Customer Service</h4>
@@ -398,7 +398,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6 mt-lg-5 mt-md-5">
-                    <a href="#" class="service">
+                    <a href="{{ route('services') }}" class="service">
                         <div class="card card-body service-item">
                             <i class="icon ion-videocamera"></i>
                             <h4 class="h4 font-weight-bold">Digital & Creative</h4>

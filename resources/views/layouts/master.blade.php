@@ -12,11 +12,11 @@
     <!-- Mobile Specific Metas
   ================================================== -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Creative Agency Bootstrap Template">
+    <meta name="description" content="Star Network Solutions">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="author" content="Themefisher">
-    <meta name="theme-name" content="airspace">
-    <meta name="generator" content="Themefisher Airspace Template v1.0">
+    <meta name="author" content="Star Network Solutions">
+    <meta name="theme-name" content="Star Network Solutions">
+    <meta name="generator" content="Star Network Solutions">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets') }}/fav.png" />
 

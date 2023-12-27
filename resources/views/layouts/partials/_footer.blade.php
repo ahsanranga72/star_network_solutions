@@ -26,10 +26,10 @@
                 <h6><a href="{{ route('privacy-policy') }}">Privacy policy</a></h6>
             </div>
             <div class="col-md-12 col-lg-12 col-sm-12">
-                <p class="copyright mb-0 text-center">Copyright
+                <p class="copyright mb-0 text-center">
                     <script>
                         document.write(new Date().getFullYear())
-                    </script> &copy; Designed & Developed by <a href="{{ route('home') }}">US</a>.
+                    </script> &copy; SNS, All rights reserved by <a href="{{ route('home') }}">SNS</a>.
                 </p>
             </div>
         </div>
